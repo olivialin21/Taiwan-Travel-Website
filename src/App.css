@@ -1,7 +1,133 @@
+/* Common */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;  
+}
 body{
   font-family: 'Roboto', sans-serif;
 }
+a{
+  text-decoration: none;
+}
 
-/*  */
+/* Header */
+.header{
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+.header-like{
+  color: #959595;
+  background-color: #fff;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 6px;
+  padding: 9px 16px 7px 16px;
+}
+.header-like .c{
+  stroke: none;
+  fill: #959595;
+}
+.header-like span{
+  margin-left: 4px;
+  font-size: 14px;
+  line-height: 14px;
+}
+.header-bg{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+img.header-bg{
+  object-fit: cover;
+}
+.header-logo .c{
+  fill:#fff;
+  stroke: none;
+}
+.header-content{
+  padding-top: 30px;
+  width: 100%;
+}
+.header-search{
+  margin: 80px 92px 0 92px;
+}
+.header-search h1{
+  font-weight: bold;
+  color:#fff;
+  font-size: 5rem;
+  text-shadow: 0 3px 6px #00000029;
+}
+.header-search-item{
+  color: #959595;
+  background-color: #fff;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 1.5rem;
+  padding: 14px 24px;
+  margin-right: 12px;
+}
+.header-search-item span{
+  padding-top: 3px;
+  margin-right: 8px;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.header-search-icon .c{
+  fill: #959595;
+  stroke: none;
+}
+
+/* Search */
+.search{
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+}
+.search select{
+  max-width: 468px;
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  border:0;
+  padding: 20px 20px 20px 40px;
+  box-shadow: 0 3px 6px #00000029;
+  margin-right: 12px;
+}
+.search svg{
+  position: absolute;
+  top:50%;
+  left: 12px;
+  z-index: 9;
+  height: 24px;
+  width: 24px;
+}
+.search .c{
+  fill: #959595;
+  stroke: none;
+}
+.search input{
+  max-width: 468px;
+  padding: 20px;
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  border:0;
+  box-shadow: 0 3px 6px #00000029;
+  margin-right: 12px;
+}
+.search button{
+  max-width: 160px;
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #B72323;
+  color: #fff;
+  font-size: 1.25rem;
+  box-shadow: 0 3px 6px #00000029;
+  padding: 9px 16px 7px 16px;
+}
+
+/* Attractons */
