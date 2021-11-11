@@ -15,7 +15,9 @@ export const setPage = async (dispatch, url, title) => {
     payload: title,
   });
   try {
-    datas = await getAllAttractions();
+    let res = await getAllAttractions();
+    let datas = res.data
+    console.log();
     dispatch({
       type: SET_PAGE_CONTENT,
       payload: { title, datas },
