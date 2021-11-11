@@ -4,7 +4,7 @@ import { getTitle } from "../utils";
 import { setPage } from "../actions";
 // import Navbar from "../components/Navbar"
 import Header from "../components/Header"
-import Datas from "../components/Datas"
+import DataList from "../components/Datas"
 // import Steps from "../components/Steps"
 // import Footer from "../components/Footer"
 import imgBanner from "../img/banner_attraction.png"
@@ -21,7 +21,7 @@ function Attraction() {
     <>
     {/* <Navbar /> */}
     <Header title={title} bannerImg={imgBanner}/>
-    <Datas />
+    <DataList />
     {/* <Steps />
     <Footer /> */}
     </>
