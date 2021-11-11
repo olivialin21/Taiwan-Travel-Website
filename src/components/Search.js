@@ -8,7 +8,7 @@ export default function Search() {
       <IconLocation />
       <select>
         {cityList.map(city =>
-          <option>{city.name}</option>
+          <option value={city.name} key={city.name}>{city.name}</option>
         )}
       </select>
       <input type="Keyword" placeholder="輸入景點名稱" />

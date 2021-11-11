@@ -1,0 +1,22 @@
+[
+  {
+     "title": "景點",
+     "url": "/"
+  },
+  {
+     "title": "景點",
+     "url": "/attraction"
+  },
+  {
+     "title": "餐飲",
+     "url": "/restaurant"
+  },
+  {
+     "title": "旅宿",
+     "url": "/hotel"
+  },
+  {
+     "title": "活動",
+     "url": "/activity"
+  }
+]

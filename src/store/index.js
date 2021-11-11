@@ -1,13 +1,41 @@
 import { createContext } from "react";
 import useReducerWithThunk from "use-reducer-thunk";
 
+import {
+  SET_PAGE_TITLE,
+  SET_PAGE_CONTENT
+} from "../utils/constants"
+
 export const StoreContext = createContext();
+let likeItems = localStorage.getItem("likeItems")
+  ? JSON.parse(localStorage.getItem("likeItems"))
+  : [];
 
 const initialState = {
+  page: {
+    title: "",
+    datas: [],
+  },
 };
 
 function reducer(state, action) {
   switch (action.type){
+    case SET_PAGE_TITLE:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          title: action.payload,
+        },
+      };
+    case SET_PAGE_CONTENT:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          ...action.payload,
+        },
+      };
     default:
       return state;
   }
