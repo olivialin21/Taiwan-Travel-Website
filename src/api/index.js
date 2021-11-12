@@ -17,11 +17,17 @@ function getAuthorizationHeader() {
 }
 
 export const getAllAttractions = () => {
-   return axios.get('https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=30&$format=JSON',
+   return axios.get('https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=10&$format=JSON',
    {
       headers: getAuthorizationHeader()
    }
    )
 }
 
-
+export const getClasses = (city, id) => {
+   return axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=contains(ID,${id})&$format=JSON`,
+   {
+      headers: getAuthorizationHeader()
+   }
+   )
+}

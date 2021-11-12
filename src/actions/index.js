@@ -1,10 +1,14 @@
+import cityList from "../json/cityList.json";
+
 import {
   SET_PAGE_TITLE,
-  SET_PAGE_CONTENT
+  SET_PAGE_CONTENT,
+  GET_CLASS
 } from "../utils/constants"
 
 import {
-  getAllAttractions
+  getAllAttractions,
+  getClasses
 } from "../api"
 
 export const setPage = async (dispatch, url, title) => {
@@ -17,7 +21,6 @@ export const setPage = async (dispatch, url, title) => {
   try {
     let res = await getAllAttractions();
     let datas = res.data
-    console.log();
     dispatch({
       type: SET_PAGE_CONTENT,
       payload: { title, datas },
@@ -31,4 +34,20 @@ export const setPage = async (dispatch, url, title) => {
     console.log(error);
     // dispatch({ type: FAIL_PRODUCTS_REQUEST, payload: error });
   }
+}
+
+export const getClass = async (dispatch, city_cn, id) => {
+  let city_en = cityENtoCN(city_cn);
+  let classes = await getClasses(city_en, id);
+  dispatch({
+    type: GET_CLASS
+  })
+  return classes
+}
+
+export const cityENtoCN = (city_cn) => {
+  const city = cityList.find(
+    x => x.name === city_cn
+  );
+  return city.name_en;
 }

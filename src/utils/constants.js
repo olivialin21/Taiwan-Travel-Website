@@ -1,2 +1,3 @@
 export const SET_PAGE_CONTENT = "SET_PAGE_CONTENT"
 export const SET_PAGE_TITLE = "SET_PAGE_TITLE"
+export const GET_CLASS = "GET_CLASS"
