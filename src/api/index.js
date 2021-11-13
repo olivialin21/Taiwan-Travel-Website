@@ -25,7 +25,8 @@ export const getAllAttractions = () => {
 }
 
 export const getClasses = (city, id) => {
-   return axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=contains(ID,${id})&$format=JSON`,
+   const eq = " eq ";
+   return axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?$filter=ID${eq}'${id}'&$format=JSON`,
    {
       headers: getAuthorizationHeader()
    }

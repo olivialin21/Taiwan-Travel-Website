@@ -5,21 +5,29 @@ import { getClass } from "../actions"
 export default function DataItem({data}) {
   const { dispatch } = useContext(StoreContext);
   const city = data.Address.slice(0,3);
-  const classes = [];
+  let classes = [];
 
   useEffect(() => {
-    const classes = getClass(dispatch, city, data.ID);
+    classes = getClass (dispatch, city, data.ID)
   }, [])
 
   
   return(
-    <div className="dataItem">
-      <img src={data.Picture.PictureUrl1} alt="sitePicture"/>
-      <p>{data.Name}</p>
-      <p>{city}</p>
-      {classes.map(Class => (
-        <div>{Class}</div>
-      ))}
+    <div className="col-3">
+      <div className="dataItem">
+        <div className="dataItem-img">
+          <img src={data.Picture.PictureUrl1} alt="sitePicture"/>
+        </div>
+        <div className="dataItem-intro">
+          <h5>{data.Name}</h5>
+          <p>{city}</p>
+          <div className="row">
+            <div>{classes.Class1}</div>
+            <div>{classes.Class2}</div>
+            <div>{classes.Class3}</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

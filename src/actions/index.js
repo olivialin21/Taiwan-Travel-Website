@@ -12,7 +12,6 @@ import {
 } from "../api"
 
 export const setPage = async (dispatch, url, title) => {
-  let datas = [];
   // dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   dispatch({
     type: SET_PAGE_TITLE,
@@ -42,7 +41,7 @@ export const getClass = async (dispatch, city_cn, id) => {
   dispatch({
     type: GET_CLASS
   })
-  return classes
+  return classes.data
 }
 
 export const cityENtoCN = (city_cn) => {

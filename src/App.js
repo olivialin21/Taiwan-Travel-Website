@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/" element={<Attraction/>} />
           <Route path="/attraction" element={<Attraction/>} />
           <Route path="/restaurant" element={<Restaurant/>} />
-          <Route exact path="/hotel" element={<Hotel/>} />
+          <Route path="/hotel" element={<Hotel/>} />
           <Route path="/activity" element={<Activity/>} />
           {/* <Route path="/works/:workId" element={<Work/>} /> */}
         </Routes>
