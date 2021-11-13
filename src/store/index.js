@@ -3,6 +3,7 @@ import useReducerWithThunk from "use-reducer-thunk";
 
 import {
   SET_PAGE_TITLE,
+  SET_PAGE_BANNER,
   SET_PAGE_CONTENT
 } from "../utils/constants"
 
@@ -14,6 +15,7 @@ let likeItems = localStorage.getItem("likeItems")
 const initialState = {
   page: {
     title: "",
+    banner: "",
     datas: [],
   },
 };
@@ -26,6 +28,14 @@ function reducer(state, action) {
         page: {
           ...state.page,
           title: action.payload,
+        },
+      };
+    case SET_PAGE_BANNER:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          banner: action.payload,
         },
       };
     case SET_PAGE_CONTENT:

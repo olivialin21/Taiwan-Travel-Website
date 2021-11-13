@@ -1,22 +1,27 @@
 [
   {
      "title": "景點",
-     "url": "/"
+     "url": "/",
+     "banner": "../img/banner_attraction"
   },
   {
      "title": "景點",
-     "url": "/attraction"
+     "url": "/attraction",
+     "banner": "../img/banner_attraction"
   },
   {
      "title": "餐飲",
-     "url": "/restaurant"
+     "url": "/restaurant",
+     "banner": "../img/banner_restaurant"
   },
   {
      "title": "旅宿",
-     "url": "/hotel"
+     "url": "/hotel",
+     "banner": "../img/banner_hotel"
   },
   {
      "title": "活動",
-     "url": "/activity"
+     "url": "/activity",
+     "banner": "../img/banner_activity"
   }
 ]

@@ -2,20 +2,33 @@ import cityList from "../json/cityList.json";
 
 import {
   SET_PAGE_TITLE,
+  SET_PAGE_BANNER,
   SET_PAGE_CONTENT,
   GET_CLASS
 } from "../utils/constants"
+
+import { 
+  getTitle,
+  getBanner
+} from "../utils";
 
 import {
   getAllAttractions,
   getClasses
 } from "../api"
 
-export const setPage = async (dispatch, url, title) => {
+export const setPage = async (dispatch, url) => {
   // dispatch({ type: BEGIN_PRODUCTS_REQUEST });
+  let title = getTitle(url);
+  let banner = getBanner(url);
+  console.log(banner);
   dispatch({
     type: SET_PAGE_TITLE,
     payload: title,
+  });
+  dispatch({
+    type: SET_PAGE_BANNER,
+    payload: banner,
   });
   try {
     let res = await getAllAttractions();

@@ -17,7 +17,7 @@ function getAuthorizationHeader() {
 }
 
 export const getAllAttractions = () => {
-   return axios.get('https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=10&$format=JSON',
+   return axios.get('https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=16&$format=JSON',
    {
       headers: getAuthorizationHeader()
    }

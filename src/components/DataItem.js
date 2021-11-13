@@ -16,7 +16,13 @@ export default function DataItem({data}) {
     <div className="col-3">
       <div className="dataItem">
         <div className="dataItem-img">
-          <img src={data.Picture.PictureUrl1} alt="sitePicture"/>
+          {data.Picture.PictureUrl1 ? 
+            <img src={data.Picture.PictureUrl1} alt="sitePicture"/>
+            :
+            <div>
+              未提供圖片
+            </div>
+          }
         </div>
         <div className="dataItem-intro">
           <h5>{data.Name}</h5>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import NavItem from "./NavItem"
 import Search from "../components/Search"
 import { ReactComponent as Logo } from "../img/icon_logo.svg"
 import { ReactComponent as IconLike } from "../img/icon_like.svg"
@@ -10,7 +10,7 @@ import { ReactComponent as IconActivity } from "../img/icon_activity.svg"
 export default function Header({title, bannerImg}) {
   return(
     <div className="header">
-      <img className="header-bg" src={bannerImg} alt="bannerImg"/>
+      <img className="header-bg" src={require`${bannerImg}`} alt="bannerImg"/>
       <div className="container">
         <div className="header-content">
           <div className="d-flex justify-content-between">
@@ -23,30 +23,30 @@ export default function Header({title, bannerImg}) {
           <div className="header-search">
             <h1>{title}</h1>
             <div className="d-flex">
-              <Link to="/attraction">
+              <NavItem to="/attraction">
                 <div className="d-flex align-items-center header-search-item">
                   <span>景點</span>
                   <IconAttraction className="header-search-icon"/>
                 </div>
-              </Link>
-              <Link to="/restaurant">
+              </NavItem>
+              <NavItem to="/restaurant">
                 <div className="d-flex align-items-center header-search-item">
                   <span>餐飲</span>
                   <IconRestaurant className="header-search-icon"/>
                 </div>
-              </Link>
-              <Link to="/hotel">
+              </NavItem>
+              <NavItem to="/hotel">
                 <div className="d-flex align-items-center header-search-item">
                   <span>旅宿</span>
                   <IconHotel className="header-search-icon"/>
                 </div>
-              </Link>
-              <Link to="/activity">
+              </NavItem>
+              <NavItem to="/activity">
                 <div className="d-flex align-items-center header-search-item">
                   <span>活動</span>
                   <IconActivity className="header-search-icon"/>
                 </div>
-              </Link>
+              </NavItem>
             </div>
             <Search />
           </div>
