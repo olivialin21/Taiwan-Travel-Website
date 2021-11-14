@@ -13,7 +13,7 @@ function Attraction() {
   useEffect(() => {
     const url = window.location.pathname;
     setPage(dispatch, url)
-  }, [title]);// eslint-disable-line react-hooks/exhaustive-deps  
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps  
   
   return (
     <>

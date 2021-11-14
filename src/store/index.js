@@ -18,6 +18,9 @@ const initialState = {
     banner: "",
     datas: [],
   },
+  navBar: {
+    activeItem: "/",
+  },
 };
 
 function reducer(state, action) {

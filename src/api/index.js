@@ -16,8 +16,26 @@ function getAuthorizationHeader() {
      return { 'Authorization': Authorization, 'X-Date': GMTString }; 
 }
 
-export const getAllAttractions = () => {
-   return axios.get('https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$top=16&$format=JSON',
+export const getAllAttractions = (url) => {
+   let category = ""
+   switch (url)  {
+      case "/attraction":
+         category = "ScenicSpot";  
+         break;   
+      case "/restaurant":
+         category = "Restaurant";  
+         break;   
+      case "/hotel":
+         category = "Hotel"; 
+         break;
+      case "/activity":
+         category = "Activity"; 
+         break;
+      default:
+         category = "ScenicSpot";  
+         break;  
+   }
+   return axios.get(`https://ptx.transportdata.tw/MOTC/v2/Tourism/${category}?$top=16&$format=JSON`,
    {
       headers: getAuthorizationHeader()
    }

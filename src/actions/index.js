@@ -20,19 +20,18 @@ import {
 export const setPage = async (dispatch, url) => {
   // dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   let title = getTitle(url);
-  let banner = getBanner(url);
-  console.log(banner);
   dispatch({
     type: SET_PAGE_TITLE,
     payload: title,
   });
   dispatch({
     type: SET_PAGE_BANNER,
-    payload: banner,
+    payload: url,
   });
   try {
-    let res = await getAllAttractions();
+    let res = await getAllAttractions(url);
     let datas = res.data
+
     dispatch({
       type: SET_PAGE_CONTENT,
       payload: { title, datas },
@@ -49,17 +48,12 @@ export const setPage = async (dispatch, url) => {
 }
 
 export const getClass = async (dispatch, city_cn, id) => {
-  let city_en = cityENtoCN(city_cn);
-  let classes = await getClasses(city_en, id);
-  dispatch({
-    type: GET_CLASS
-  })
-  return classes.data
-}
-
-export const cityENtoCN = (city_cn) => {
   const city = cityList.find(
     x => x.name === city_cn
   );
-  return city.name_en;
+  let cityInfo = await getClasses( city.name_en, id );
+  dispatch({
+    type: GET_CLASS
+  })
+  return cityInfo.data
 }

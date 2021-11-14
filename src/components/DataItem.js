@@ -4,11 +4,11 @@ import { getClass } from "../actions"
 
 export default function DataItem({data}) {
   const { dispatch } = useContext(StoreContext);
-  const city = data.Address.slice(0,3);
-  let classes = [];
+  const city = data.City ? data.City : data.Address ? data.Address.slice(0,3) : "未提供地點";
+  let cityInfo = [];
 
   useEffect(() => {
-    classes = getClass (dispatch, city, data.ID)
+    cityInfo = getClass (dispatch, city, data.ID)
   }, [])
 
   
@@ -28,9 +28,9 @@ export default function DataItem({data}) {
           <h5>{data.Name}</h5>
           <p>{city}</p>
           <div className="row">
-            <div>{classes.Class1}</div>
-            <div>{classes.Class2}</div>
-            <div>{classes.Class3}</div>
+            <div>{cityInfo.Class1}</div>
+            <div>{cityInfo.Class2}</div>
+            <div>{cityInfo.Class3}</div>
           </div>
         </div>
       </div>

@@ -7,10 +7,19 @@ import { ReactComponent as IconRestaurant } from "../img/icon_restaurant.svg"
 import { ReactComponent as IconHotel } from "../img/icon_hotel.svg"
 import { ReactComponent as IconActivity } from "../img/icon_activity.svg"
 
-export default function Header({title, bannerImg}) {
+export default function Header( {title, bannerImg} ) {
   return(
     <div className="header">
-      <img className="header-bg" src={require`${bannerImg}`} alt="bannerImg"/>
+      { bannerImg == "/attraction" ?
+        <img className="header-bg" src={require('../img/banner_attraction.png').default} alt="bannerImg"/> :
+        bannerImg == "/restaurant" ?
+        <img className="header-bg" src={require('../img/banner_restaurant.png').default} alt="bannerImg"/> :
+        bannerImg == "/hotel" ?
+        <img className="header-bg" src={require('../img/banner_hotel.png').default} alt="bannerImg"/> :
+        bannerImg == "/activity" ?
+        <img className="header-bg" src={require('../img/banner_activity.png').default} alt="bannerImg"/> :
+        <img className="header-bg" src={require('../img/banner_attraction.png').default} alt="bannerImg"/>
+      }
       <div className="container">
         <div className="header-content">
           <div className="d-flex justify-content-between">
@@ -24,28 +33,20 @@ export default function Header({title, bannerImg}) {
             <h1>{title}</h1>
             <div className="d-flex">
               <NavItem to="/attraction">
-                <div className="d-flex align-items-center header-search-item">
-                  <span>景點</span>
-                  <IconAttraction className="header-search-icon"/>
-                </div>
+                <span>景點</span>
+                <IconAttraction className="header-search-icon"/>
               </NavItem>
               <NavItem to="/restaurant">
-                <div className="d-flex align-items-center header-search-item">
-                  <span>餐飲</span>
-                  <IconRestaurant className="header-search-icon"/>
-                </div>
+                <span>餐飲</span>
+                <IconRestaurant className="header-search-icon"/>
               </NavItem>
               <NavItem to="/hotel">
-                <div className="d-flex align-items-center header-search-item">
-                  <span>旅宿</span>
-                  <IconHotel className="header-search-icon"/>
-                </div>
+                <span>旅宿</span>
+                <IconHotel className="header-search-icon"/>
               </NavItem>
               <NavItem to="/activity">
-                <div className="d-flex align-items-center header-search-item">
-                  <span>活動</span>
-                  <IconActivity className="header-search-icon"/>
-                </div>
+                <span>活動</span>
+                <IconActivity className="header-search-icon"/>
               </NavItem>
             </div>
             <Search />

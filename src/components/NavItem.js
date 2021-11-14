@@ -16,6 +16,7 @@ export default function NavItem(props) {
     <Link to={to}>
       <div
         onClick={onClick}
+        className="d-flex align-items-center header-search-item"
         // className={`
         //     ${className} 
         //     ${state.navBar.activeItem === to ? activeClassName : ""}`}

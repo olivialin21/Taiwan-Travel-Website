@@ -79,6 +79,9 @@ img.header-bg{
   fill: #959595;
   stroke: none;
 }
+.header-search-item--active{
+  color: #B72323;
+}
 
 /* Search */
 .search{
