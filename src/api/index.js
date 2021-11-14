@@ -3,8 +3,8 @@ import jsSHA from "jssha"
 
 function getAuthorizationHeader() {
    //  填入自己 ID、KEY 開始
-      let AppID = '1df2110c12ab4cd68d3cf8de5398a44e';
-      let AppKey = 'QqVw0g74_brVr1wAJtCJt4yp16w';
+      let AppID = process.env.REACT_APP_TDX_ID ;
+      let AppKey = process.env.REACT_APP_TDX_KEY ;
    //  填入自己 ID、KEY 結束
       let GMTString = new Date().toGMTString();
       let ShaObj = new jsSHA('SHA-1', 'TEXT', {
